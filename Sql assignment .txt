@@ -1,0 +1,52 @@
+
+CREATE TABLE Online_Customers (Customer_Id INT PRIMARY KEY IDENTITY(1, 1),
+Customer_Name VARCHAR(100),
+Customer_City VARCHAR(100),
+Customer_Mail VARCHAR(100))
+GO
+CREATE TABLE Orders (Order_Id INT PRIMARY KEY IDENTITY(1, 1),
+Customer_Id INT,
+Order_Total float,
+Discount_Rate float,
+Order_Date DATETIME)
+GO
+CREATE TABLE Sales (Sales_Id INT PRIMARY KEY IDENTITY(1, 1),
+Order_Id INT,
+Sales_Total FLOAT)
+GO
+INSERT INTO [dbo].Online_Customers(Customer_Name, Customer_City, Customer_Mail)
+VALUES(N'Salvador', N'Philadelphia', N'tyiptqo.wethls@chttw.org')
+INSERT INTO [dbo].Online_Customers(Customer_Name, Customer_City, Customer_Mail)
+VALUES(N'Gilbert', N'San Diego', N'rrvyy.wdumos@lklkj.org')
+INSERT INTO [dbo].Online_Customers(Customer_Name, Customer_City, Customer_Mail)
+VALUES(N'Ernest', N'New York', N'ymuea.pnxkukf@dwv.org')
+INSERT INTO [dbo].Online_Customers(Customer_Name, Customer_City, Customer_Mail)
+VALUES(N'Stella', N'Phoenix', N'xvsfzp.rjhtni@rdn.com')
+INSERT INTO [dbo].Online_Customers(Customer_Name, Customer_City, Customer_Mail)
+VALUES(N'Jorge', N'Los Angeles', N'oykbo.vlxopp@nmwhv.org')
+INSERT INTO [dbo].Online_Customers(Customer_Name, Customer_City, Customer_Mail)
+VALUES(N'Jerome', N'San Antonio', N'wkabc.ofmhetq@gtmh.co')
+INSERT INTO [dbo].Online_Customers(Customer_Name, Customer_City, Customer_Mail)
+VALUES(N'Edward', N'Chicago', N'wguexiymy.nnbdgpc@juc.co')
+INSERT INTO [dbo].Online_Customers(Customer_Name, Customer_City, Customer_Mail)
+VALUES(N'John', N'Chicago', N'jxkn.nnbdgpc@juc.co')
+GO
+INSERT INTO [dbo].Orders(Customer_Id, Order_Total, Discount_Rate, Order_Date)
+VALUES(3, 1910.64, 5.49, CAST('03-Dec-2019' AS DATETIME))
+INSERT INTO [dbo].Orders(Customer_Id, Order_Total, Discount_Rate, Order_Date)
+VALUES(4, 150.89, 15.33, CAST('11-Jun-2019' AS DATETIME))
+INSERT INTO [dbo].Orders(Customer_Id, Order_Total, Discount_Rate, Order_Date)
+VALUES(5, 912.55, 13.74, CAST('15-Sep-2019' AS DATETIME))
+INSERT INTO [dbo].Orders(Customer_Id, Order_Total, Discount_Rate, Order_Date)
+VALUES(7, 418.24, 14.53, CAST('28-May-2019' AS DATETIME))
+INSERT INTO [dbo].Orders(Customer_Id, Order_Total, Discount_Rate, Order_Date)
+VALUES(55, 512.55, 13.74, CAST('15-Jun-2019' AS DATETIME))
+INSERT INTO [dbo].Orders(Customer_Id, Order_Total, Discount_Rate, Order_Date)
+VALUES(57, 118.24, 14.53, CAST('28-Dec-2019' AS DATETIME))
+GO
+INSERT INTO [dbo].Sales(Order_Id, Sales_Total)VALUES(3, 370.95)
+INSERT INTO [dbo].Sales(Order_Id, Sales_Total)VALUES(4, 882.13)
+INSERT INTO [dbo].Sales(Order_Id, Sales_Total)VALUES(12, 370.95)
+INSERT INTO [dbo].Sales(Order_Id, Sales_Total)VALUES(13, 882.13)
+INSERT INTO [dbo].Sales(Order_Id, Sales_Total)VALUES(55, 170.95)
+INSERT INTO [dbo].Sales(Order_Id, Sales_Total)VALUES(57, 382.13)
